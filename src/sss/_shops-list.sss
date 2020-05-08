@@ -1,0 +1,65 @@
+.shops-list
+
+	&__list
+		max-height: 400px
+		overflow-y: auto
+		padding-right: 10px
+
+		&::-webkit-scrollbar
+			width: 9px
+
+			&-track, &-thumb
+				border-radius: 5px
+
+			&-track
+				background: var(--secondColor)
+
+			&-thumb
+				background: var(--mainColor)
+
+		&-el
+
+			&:not(:first-child)
+				margin: 10px 0 0
+
+			.radio
+				display: flex
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute
+					size: 100% 1px
+					background: var(--borderColor)
+					left: 0
+					bottom: 4px
+
+		&:matches(-address, -time, -dist)
+			position: relative
+			z-index: 1
+
+			span
+				background: #fff
+
+			&:first-child
+
+				span
+					padding-right: 7px
+
+			&:last-child
+
+				span
+					padding-left: 7px
+
+			&:not(:first-child, :last-child)
+				padding: 0 7px
+
+		&-address
+			width: 40%
+			margin-right: 15px
+			white-space: nowrap
+			text-overflow: ellipsis
+			overflow: hidden
+
+		&-dist
+			margin-left: auto

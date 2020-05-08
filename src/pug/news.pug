@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Новости
+							.title-block__title
+								h1 Новости
+				.inner-content__content
+					.news__cont
+						.wrapper
+							.news
+								each news, i in ["Впервые в Челябинске немецкие, высокотехнологические стельки VIMANOVA", "Новинка в линейке Evolution: бандаж отводящий для большого пальца стопы", "Новинка - шиноворотник для новорожденных", "«Ортолэнд» сообщает о новинках в ассортименте ортопедической обуви для детей Twiki", ]
+									.news__item
+										.news-one
+											a.news-one__img(href="#")
+												img(src="img/photos/news-img-"+i+".jpg", alt="")
+											.news-one__desc
+												.news-one__title
+													a(href="#")=news
+												.news-one__date 14.08.2018
+					.paginator__cont
+						.wrapper
+							ul.paginator
+								li.paginator__arrow
+									a.paginator-arrow(href="#")
+								- for (let i = 1; i <= 5; i++)
+									li
+										if (i == 1)
+											a.paginator__link.active(href="#")=i
+										else
+											a.paginator__link(href="#")=i
+								li.paginator__arrow
+									a.paginator-arrow(href="#")
+		include inc/footer.pug
+		include inc/scripts.pug

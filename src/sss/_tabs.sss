@@ -1,0 +1,87 @@
+.tabs
+	font-size: rem(14)
+	
+	&__tabs
+		display: flex
+		border-bottom: 1px solid var(--borderColor)
+
+	&-tab
+		margin-bottom: -1px
+		border: 1px solid var(--borderColor)
+		padding: 23px 49px 25px
+		cursor: pointer
+		user-select: none
+
+		&:not(:last-child)
+			border-right: none
+
+		&.active
+			border-color: transparent
+			color: #fff
+			background: var(--mainColor)
+
+		&:not(.active)
+			background: #f5f6f8
+
+	&__main
+		padding: rem(42) rem(50) rem(55)
+		position: relative
+		border: 1px solid var(--borderColor)
+		border-top: none
+
+	&-content
+		position: absolute
+		pointer-events: none
+		opacity: 0
+		font-size: rem(14)
+		max-width: 850px
+
+		&.active
+			opacity: 1
+			pointer-events: all
+			position: static
+
+		.reviews
+			margin: 0 !important
+	
+			&__title
+				text-transform: uppercase
+				font-weight: bold
+				font-size: rem(18)
+				margin-bottom: 30px
+			
+			&__cont
+				max-width: 965px
+
+			&__one
+
+				.rating
+
+					&__list
+						margin-right: 0
+
+				&-date
+					line-height: rem(14)
+					margin-right: 23px
+					padding-right: 23px
+					border-right: 1px solid var(--borderColor)
+
+				&-top
+					display: flex
+					align-items: center
+					justify-content: space-between
+					border: 1px solid var(--borderColor)
+					padding: 12px 20px
+
+				&-user, &-date-rating
+					display: flex
+					align-items: center
+
+				&-username
+					// margin-left: 22px
+
+				&-text
+					padding: 20px
+					font-size: rem(14)
+					line-height: rem(20)
+					max-width: 900px

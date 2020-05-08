@@ -1,0 +1,48 @@
+.main-slider
+	position: relative
+
+	&__slide
+		position: relative
+
+		&:not(:first-child)
+			display: none
+
+		&-img, &-img img
+			display: block
+
+		&-img
+			width: 100%
+
+		&-text
+			position: absolute 0
+			color: #fff
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: flex-start
+			padding: 2rem persent(178, 1300)
+
+		&-title
+			font-size: rem(62)
+			line-height: lh(66, 62)
+			font-weight: bold
+			max-width: 440px
+
+		&-btn
+			margin: rem(27) 0 0
+
+	.slick
+
+		&-arrow
+			position: absolute calc(50% - 20px) * *
+			z-index: 2
+			size: 40px
+			border-radius: 50%
+			background: url("../img/ico-main-slider-arrow.svg") center no-repeat, #fff
+
+		&-next
+			right: 36px
+
+		&-prev
+			left: 36px
+			transform: rotate(180deg)

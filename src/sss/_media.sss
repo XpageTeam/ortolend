@@ -1,0 +1,1344 @@
+@media screen and (min-width: 660px)
+
+	@supports (display: grid)
+		.footer
+
+			&__bot
+				display: grid
+				grid-template-columns: repeat(3, 1fr)
+				grid-gap: 20px
+
+			&__soc
+				display: flex
+				justify-content: center
+
+			&__feddback
+				display: flex
+				justify-content: flex-end
+
+@media screen and (min-width: 700px)
+	.ordering__summary
+
+		&--mobile
+			display: none
+
+@media screen and (min-width: 1000px)
+	.head
+
+		&__burger
+			display: none
+
+	.sort__filter-btn
+		display: none
+
+@media screen and (max-width: 1380px)
+	html
+		font-size: 96%
+
+	.wrapper
+		box-sizing: border-box
+		padding: 0 16px
+
+	.head
+
+		&__wrap
+			padding: 12px 0
+
+		&__phone
+			margin-right: 20px
+
+		&__nav, &__logo
+
+
+			&:not(:last-child)
+				margin-right: 15px
+
+		&__bot
+			margin: 1.2rem 0 0
+
+	.menu
+
+		&__link
+
+			&:after
+				top: calc(100% + 22px)
+
+	.main-content, .inner-content
+		margin: 1.2rem 0 0 !important
+
+	.inner-content
+		padding: 1.2rem 0 0 !important
+
+	.bot-menu
+		margin-bottom: 0
+
+		&__item
+			margin-bottom: 0
+
+@media screen and (max-width: 1200px)
+	html
+		font-size: 93%
+
+	.head
+
+		&__logo
+			width: 36px
+			overflow: hidden
+
+			img
+				max-width: none
+
+	.main-title
+		margin-bottom: 1.2rem !important
+
+	.main-catalog
+
+		&__title
+
+			&-cont
+				margin-bottom: 0 
+
+	.main-services
+
+		&__cont
+			margin: 2rem 0
+
+	.main-banners
+
+		&__top
+			grid-gap: 15px
+
+			&-item
+
+				&--vertical 
+
+					.small-banner
+
+						&__desc
+							padding: 2.5rem 1rem 0
+
+		&__mid
+			margin: 15px 0 0
+	
+	.mid-banners
+		margin: 0 0 -15px -15px
+
+		&__item
+			width: calc((100% - 15px * 3) / 3)
+			margin: 0 0 15px 15px
+
+	.main-services
+		margin: 0 0 -15px -15px
+
+		&__item
+			width: calc((100% - 15px * 4) / 4)
+			margin: 0 0 15px 15px
+
+	.bot-banner
+		margin: 2.5rem 0 0
+
+	.footer
+		margin: 3.5rem 0 0
+
+		&__top
+			padding: 2rem 0
+			flex-wrap: wrap
+
+		&__bot
+			padding: 22px 0
+
+		&__col
+			width: calc(25% - 1.2rem)
+			
+			&--contacts
+				width: 100%
+				margin: 20px 0 0
+
+	.f-contacts
+		display: flex
+		align-items: center
+
+		&:matches(__phones, __address)
+
+			&:not(:first-child)
+				margin: 0 0 0 30px !important
+
+	.search-btn
+		size: 15px
+		background-size: contain !important
+
+	.cart-link
+		width: 18px
+		background-position: center
+		background-size: contain !important
+
+	.lc-link
+		width: 17px
+		background-position: center !important
+		background-size: contain !important
+
+	.service
+		padding: 1.2rem
+
+	.catalog
+
+		&__aside
+			margin-right: 1rem
+			width: 260px
+
+	.aside-menu
+
+		&__title
+			padding: 15px 20px
+
+		&__link
+			padding: 10px 20px
+
+	.sort
+
+		&:not(:last-child)
+			margin-bottom: 1rem
+
+	.cat2
+		margin: 0 0 -1rem -1rem
+
+		&__item
+			width: calc((100% - 1rem * 3) / 3)
+			margin: 0 0 1rem 1rem
+
+@media screen and (max-width: 1000px)
+	html
+		font-size: 96%
+
+	body
+
+		&.js__filter-opened
+
+			.catalog__aside
+				transform: translate3d(100%, 0, 0)
+
+		&.js__menu-opened
+			
+			.head__top, .head__bot, #content, .footer__bot, .footer__top
+				transform: translate3d(-270px, 0, 0)
+
+	.head__top, .head__bot , #content, .footer__bot, .footer__top
+		transition: transform .3s ease
+
+	.logo
+
+		img
+			max-width: none
+
+	.head
+		padding-top: 58px
+
+		&__bot
+			margin: 0
+
+			.wrapper
+				padding: 0
+		
+		&__top
+			position: fixed 0 0 * 0
+			z-index: 10
+
+		&__nav, &__phone
+			display: none
+
+		&__logo
+			margin: 0 auto !important
+			width: auto
+
+		&__cart
+			order: -2
+
+		&__lc
+			order: -1
+
+		&__burger
+			cursor: pointer
+			margin: -10px
+			padding: 10px
+			size: 50px 40px
+			display: flex
+			justify-content: center
+
+			&.js__active
+
+				.burger
+					width: 25px
+					margin: 0 -13px 0 0
+
+					span
+						opacity: 0
+
+					&:before
+						transform: rotate(45deg)
+
+					&:after
+						transform: rotate(-45deg)
+
+	.burger
+		position: relative
+		size: 30px 20px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		cursor: pointer
+
+		&:after, &:before
+			content: ""
+			transform-origin: left
+			display: inline-block
+
+		&:matches(:after, :before, & span)
+			background: var(--mainColor)
+			height: 2px
+
+		span
+			transition: opacity .3s ease
+
+	.footer
+
+		&__top
+			position: fixed 0 * 0 100%
+			background: var(--secondColor)
+			width: 270px
+			z-index: 10
+			overflow-y: auto
+			-webkit-overflow-scrolling: touch
+			overflow-scrolling: touch
+			flex-direction: column
+			justify-content: flex-start
+			padding-top: 0
+			flex-wrap: nowrap
+			transition: transform .3s ease
+
+		&__col
+			margin-right: 0 !important
+			width: 100%
+
+			&--contacts
+				margin-top: auto
+				padding: 40px 20px 0
+
+				.footer__col-title
+
+					&:after
+						display: none
+
+			&:not(.footer__col--contacts)
+				border-bottom: 1px solid var(--borderColor)
+
+			&-title
+				position: relative
+				cursor: pointer
+				margin-bottom: 0
+				padding: 15px 30px 15px 20px
+
+				&:after
+					content: ""
+					position: absolute calc(50% - 8px) 15px * *
+					border-top: 2px solid var(--borderColor)
+					border-right: 2px solid var(--borderColor)
+					size: 10px
+					transform: rotate(135deg)
+
+		&-menu
+			display: none
+			border-top: 1px solid var(--borderColor)
+
+			&__link
+				display: block
+				padding: 10px 20px
+
+			li
+
+				&:not(:first-child)
+					border-top: 1px solid var(--borderColor)
+
+	.f-contacts
+		flex-direction: column
+		align-items: flex-start
+
+		&__phones, &__address
+
+			&:not(:first-child)
+				margin: 20px 0 0 !important
+
+	.bot-menu
+		align-items: stretch
+		justify-content: flex-start
+		margin: 0 0 -1px -1px
+
+		&:before, &:after
+			display: none
+
+		&__item
+			margin: 0
+			width: calc((100% - 1px * 4) / 4)
+			margin: 0 0 1px 1px
+			display: flex
+			flex-direction: column
+			flex: 1 1 auto
+
+			&:after
+				display: none
+
+		&__link
+			text-align: center
+			padding: 10px 15px
+			display: flex
+			align-items: center
+			justify-content: center
+			align-self: stretch
+			background: var(--secondColor)
+			flex: 1 1 auto
+
+	.main-services
+
+		&__item
+			width: calc((100% - 15px * 2) / 2)
+
+	.main-cat
+		margin: 0 0 -15px -15px
+
+		&__one
+			width: calc((100% - 15px * 2) / 2)
+			margin: 0 0 15px 15px
+
+	.cat-item
+		margin: 0
+		outline-color: var(--borderColor)
+
+		&__links, &__btns
+			opacity: 1
+			pointer-events: all
+
+		&__btns
+			position: static
+			border: none
+			padding: 0
+			margin: 10px 0 0
+			z-index: 1
+
+	.main-slider
+
+		.slick
+
+			&-prev
+				left: 15px
+
+			&-next
+				right: 15px
+
+		&__slide
+
+			&-text
+				padding: 2rem 70px
+
+			&-title
+				font-size: 2rem
+
+	.main-banners
+
+		&__top
+			grid-template-columns: repeat(2, 1fr)
+
+	.mid-banners
+
+		&__item
+			width: calc((100% - 15px * 2) / 2)
+
+	.catalog
+
+		&__aside
+			display: flex
+			flex-direction: column
+			position: fixed 0 100% 0 *
+			background: var(--secondColor)
+			z-index: 10
+			transition: transform .3s ease
+			// padding: 10px 20px
+			overflow-y: auto
+
+		&__cat2
+			width: calc(100% - 292px)
+
+	.aside-menu
+		margin-bottom: auto
+
+		&__list
+			border: none
+
+		&__item
+			border-bottom: 1px solid var(--borderColor)
+
+	.catalog-aside, .catalog-aside__menu
+		flex: 1 1 auto
+		display: flex
+		flex-direction: column
+
+	.filter
+		padding: 1rem 20px
+
+	.aside-menu
+
+		&__list
+			padding: 0
+
+	.cat-item
+
+		&__links
+			padding: 1rem 15px
+			top: 0
+
+	.cat2
+
+		&__item
+			width: calc((100% - 1rem * 2) / 2)
+
+	.filter-btn
+		background: url("../img/ico-filter.svg") no-repeat
+		background-size: contain
+		border: none
+		size: 20px
+		display: block
+
+	.sort
+		padding: 20px 1rem
+
+		&__filter-btn
+			margin-right: 15px
+
+			+ .sort__select-cont
+				margin-right: auto
+
+	.inner-content
+		margin: 0 !important
+
+	.ordering
+		padding-bottom: 80px
+		position: relative
+
+		&__summary
+			margin-left: 18px
+			width: 300px
+
+	.od
+
+		&__title
+
+			&-cont
+				padding: 18px 50px 20px 30px
+
+				&:after
+					right: 21px
+
+	.order-data
+
+		&__item
+
+			&:not(:first-child)
+				margin: 25px 0 0
+
+		&__btns
+			position: absolute * 0 0 0
+
+	.od-person
+
+		&__notice
+			padding-top: 0
+
+		&__form
+			grid-template-columns: 100%
+
+			.forms
+
+				&__input
+
+					&--textarea
+						min-height: 150px
+
+					&-cont
+
+						&--textarea
+							grid-row: 4
+							grid-column: 1
+
+	.o-summary
+		top: 70px
+
+		&__item
+			padding: 18px
+
+	.detail-order
+
+		&__table
+
+			td
+
+				&:first-child
+
+					&:not(:last-child)
+						padding-left: 18px
+
+			tr
+
+				&.detail-order__table-subtitle
+
+					span
+						padding-left: 18px
+						margin: 20px 0 0
+
+	.order-list
+		padding: 20px 18px
+		flex-direction: column
+
+		&__summary
+			margin: 30px 0 0
+
+	.reviews
+		margin: 0 0 -16px -16px
+
+		&__item
+			width: calc((100% - 16px * 2) / 2)
+			margin: 0 0 16px 16px
+
+	.review
+		padding: 16px
+
+	.cart-tovar
+
+		&__img
+			margin-right: .8rem
+			width: 90px
+
+	.big-address
+		padding: 20px 18px
+
+	.contacts-addresses
+		display: block
+
+		&__small
+			margin: 20px 0 0
+			width: auto
+
+	.small-address
+
+		&__item
+			padding: 20px 18px
+
+			&:not(:first-child)
+				margin: 20px 0 0
+
+	.tovar-top
+
+		&__desc
+			margin: 2rem 0 0
+
+	.tabs
+
+		&__main
+			padding: 18px
+
+		&-content
+
+			&:not(.active)
+				display: none
+
+	.forms
+		padding: 3rem !important
+
+@media screen and (max-width: 1000px) and (min-width: 660px)
+	.tovar-top
+		flex-wrap: wrap
+
+		&__slider
+			order: -2
+
+		&__aside
+			order: -1
+			margin-left: 2rem
+			width: calc(100% - 2rem - 336px)
+
+@media screen and (max-width: 800px)
+	.lc__content
+
+		.forms
+
+			&-wrap
+				margin-left: -18px
+
+			&__input-cont
+				margin-left: 18px
+				width: calc((100% - 18px * 2) / 2)
+
+	.orders-item
+
+		&__head, &__desc-title
+			padding: 18px
+
+	.orders-desc
+		padding: 18px
+
+	.orders__item
+
+		&:not(:first-child)
+			margin: 20px 0 0
+
+@media screen and (max-width: 700px)
+	.forms
+		padding: 18px !important
+
+	.ordering
+		flex-direction: column
+		padding-bottom: 0
+
+		&__summary
+			margin-left: 0
+			width: 100%
+
+		&__summary, &__data
+
+			&:not(:first-child)
+				margin: 20px 0 0
+
+	.order-data
+	
+		&__btns
+			flex-direction: column
+			position: static !important
+
+			.arrow-btn
+
+				&:not(:last-child)
+					margin: 0 0 10px
+
+	.o-summary
+
+		&__title-cont, &__item, &__footer
+			padding: 16px
+
+	.od
+
+		&__title
+
+			&-cont
+				padding: 16px 30px 18px 16px
+
+				&:after
+					right: 12px
+
+	.od-deliv
+
+		&__methods
+
+			&-item
+				margin-bottom: 10px
+
+		&__inputs
+			margin-left: 0 !important
+
+			.forms__input-cont
+				width: 100%
+				margin-left: 0
+
+@media screen and (max-width: 660px)
+	html
+		font-size: 93%
+
+	.detail-order
+
+		&__table
+
+			td
+
+				&:first-child
+
+					&:not(:last-child)
+						padding-left: 16px
+						width: 100px
+
+			tr
+
+				&.detail-order__table-subtitle
+
+					span
+						padding-left: 16px
+
+	.order-list
+		padding: 20px 16px
+		flex-direction: column
+
+		&__summary
+			margin: 25px 0 0
+
+	.lc-password
+		max-width: none
+
+	.orders-item
+
+		&__head, &__desc-title
+			padding: 16px
+
+		&__head
+			flex-wrap: wrap
+			justify-content: space-between
+
+		&__date
+			margin: 0 !important
+
+		&__more
+			margin: 10px 0 0 
+			width: 100%
+
+	.order-list
+
+		&__table, tbody, td
+			display: block
+
+		tr
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+
+			&:not(:last-child)
+				padding-bottom: 15px
+
+			&:not(:first-child)
+				padding-top: 15px
+				border-top: 1px solid var(--borderColor)
+
+		td
+
+			&:nth-child(2)
+				width: calc(100% - 88px)
+
+	.orders-desc
+		padding: 16px
+		flex-direction: column
+
+		&__right
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: space-between
+			align-items: center
+			margin: 20px 0 0
+
+		&__btn
+			width: 100%
+
+			.default-btn
+				display: block
+				text-align: center
+
+	.lc__content
+
+		.forms
+
+			&-wrap
+				margin-left: 0
+
+			&__input-cont
+				margin-left: 0
+				width: 100%
+
+	.lc
+
+		&__btns
+			flex-direction: column-reverse
+			text-align: center
+
+			&-main
+
+				.gray-btn
+					display: block
+
+					&:not(:first-child)
+						margin: 1px 0 0
+
+			&-exit
+				margin-bottom: 20px
+
+				.bordered-btn
+					width: 100%
+
+	.tabs-tab
+		padding: 11px 14px 12px
+
+	.tovar-top
+		flex-direction: column
+
+		&__aside
+			margin: 1rem 0 0
+			width: 100%
+
+	.tovar-sale
+		padding: 20px
+
+		&__title
+			margin-bottom: 20px
+
+	.error-404
+
+		&__number
+			font-size: 6rem
+
+	.tovar-desc
+
+		&__table
+
+			td, th
+				padding: 16px 10px
+	
+	.big-address
+
+		&__list
+			display: block
+
+			&-left, &-right
+				width: auto
+
+			&-left
+				border: none
+				padding-right: 0
+
+			&-right
+				padding-left: 0
+
+	.cart
+
+		&__table
+			display: block
+
+			thead
+				display: none
+
+			td, tbody
+				display: block
+
+			tr
+				position: relative
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+
+			td
+				width: auto !important
+
+				&:first-child
+					width: 100% !important
+
+	.tova-price
+
+		&__delete, &__favorite
+			position: absolute 5px * * *
+
+		&__delete
+			right: 0
+
+		&__favorite
+			left: 0
+
+	.cart-footer
+		align-items: stretch
+
+	.promo
+
+		form
+			flex-direction: column-reverse
+			align-items: flex-start
+
+		&__label
+			margin-bottom: 10px
+
+		&__input
+			width: 100%
+
+	.cart-itog
+		padding: 20px 16px
+
+	.cart-footer
+
+		&__btns
+
+			a[class*="-btn"]
+				display: block
+
+				&:not(:last-child)
+					margin: 0 0 15px
+
+	.reviews
+		margin-left: 0 !important
+
+		&__item
+			width: 100%
+			margin-left: 0
+
+	.cat2.list
+
+		.cat-item
+			display: block
+
+			&:after
+				content: ""
+				display: table
+				clear: both
+
+			&__img
+				width: 80px
+				float: left
+				margin-right: 20px
+
+			&__desc
+				margin-right: 0 !important
+				display: block
+
+			&__title
+				min-height: 45px
+
+			&__links
+				position: absolute
+				padding: 9px
+
+			&__btns
+
+				div[class*="cat-item__btns"]
+					flex: 1 1 auto
+
+	.inner
+
+		.head__bot
+			display: none
+
+	.bread-crumbs
+
+		&__this, &__link:not(:nth-last-child(2))
+			display: none !important
+
+		&__link
+
+			&:nth-last-child(2)
+				margin-right: 0
+				position: relative
+				display: flex
+				align-items: center
+				color: var(--mainColor)
+
+				&:after
+					display: none
+
+				&:before
+					content: ""
+					display: inline-block
+					size: 10px
+					border-top: 1px solid currentColor
+					border-right: 1px solid currentColor
+					transform: rotate(-135deg)
+					margin-right: 5px
+
+	.reviews
+		margin: 0 0 -16px -16px
+
+	.review
+		padding: 16px
+
+	.sort
+		flex-wrap: wrap
+		padding: 16px
+
+		&__filter-btn
+			// order: -3
+
+		&:before
+			// content: ""
+			order: -2
+			width: 35%
+			display: inline-block
+
+		&__view
+			// order: -1
+
+		&__select
+			margin-left: 0
+			padding-left: 0 
+			background: url("../img/ico-sort.svg") no-repeat
+			size: 20px
+			background-size: contain
+
+			&-label
+				display: none
+
+			&-cont
+				// width: 50%
+				// margin: 10px 0 0
+				// flex-direction: column
+				margin-right: auto
+
+				&:nth-child(2)
+					// align-items: flex-start
+
+				&:nth-child(3)
+					align-items: flex-end
+					display: none
+
+	.news-one
+		flex-direction: column
+		align-items: stretch
+
+		&__img
+			margin-right: 0
+			margin-bottom: 1rem
+
+			img
+				width: 100%
+
+	.title-block
+
+		&__cont 
+
+			.wrapper
+				flex-direction: column
+				align-items: flex-start
+		
+		+ .search
+			margin: 15px 0 0
+	.brands
+
+		&__list
+			column-count: 2
+
+	.cat2
+
+		&__item
+			width: calc(100% - 1rem)
+
+	.bot-menu
+
+		&__item
+			width: calc((100% - 1px * 2) / 2)
+
+	.main-services
+		margin-left: 0
+
+		&__item
+			margin-left: 0
+			width: 100%
+
+	.main-cat
+		margin-left: 0
+
+		&__one
+			margin-left: 0
+			width: 100%
+
+	.cat-item
+
+		&__btns
+
+			a
+				padding-left: 2px
+				padding-right: 2px
+
+	@supports (display: grid)
+		.main-banners
+
+			&__top
+				grid-template-columns: 1fr
+
+				&-item
+
+					&--vertical
+						grid-row: auto
+
+					&--hor
+						grid-column: auto
+
+	.main-slider
+
+		&__slide
+
+			&-text
+				display: none
+
+		.slick
+
+			&-dots
+				display: flex
+				justify-content: center
+				align-items: center
+				margin: 10px 0 0
+
+				li
+
+					&:not(:last-child)
+						margin-right: 10px
+
+				button
+					display: block
+					padding: 0
+					overflow: hidden
+					text-indent: -9999px
+					border-radius: 50%
+					size: 8px
+					background: var(--mainColor)
+					border: none
+
+			&-active
+
+				button
+
+					transform: scale(1.3)
+
+	.main-banners__top-item--hor 
+
+		.small-banner
+
+			&__desc
+				padding: 1rem
+				align-items: center
+				flex-direction: row
+				justify-content: space-between
+
+			&__btn
+				flex: none
+				margin-left: 1rem
+
+			&__title
+				margin: 0
+
+	.mid-banners
+		margin-left: 0
+
+		&__item
+			margin-left: 0
+			width: 100%
+
+	.bot-banner
+
+		&__img
+
+			&-text
+				display: none
+
+	.footer
+		margin: 2rem 0 0
+
+		&__bot
+			padding: 15px 0 
+			flex-direction: column
+
+		&__copy
+			order: 1
+
+		&__copy, &__feddback
+			margin: 15px 0 0
+
+	.feedback
+
+		&__title
+			display: none
+
+	.popup-form
+		max-width: 100% !important
+
+	.doc-panel__header
+		flex-direction: column
+
+		.btn
+
+			&-panel
+				margin: 0 !important
+				border-bottom: 1px solid var(--borderColor)
+
+				&.active
+					order: 1
+					border-bottom:  none !important
+
+	.formoneclick
+
+		.forms
+
+			&-wrap
+				margin: 0
+
+			&__input-cont
+				width: 100% !important
+				margin: 0
+
+				&:not(:first-child)
+					margin: 15px 0 0
+
+			&-submit
+
+				&-cont
+					width: 100%
+
+					.btn-form
+						width: 100%
+
+	.head
+
+		&__burger
+			order: -4
+
+		&__logo
+			order: -3
+
+		&__search
+			order: -2
+
+		&__lc
+			order: -1
+
+		&__cart
+			order: 0
+			margin-right: 0 !important
+
+	body.js__menu-opened 
+
+		.head__top, .head__bot, 
+		#content, .footer__bot,  
+		.footer__top
+			transform: translate3d(270px, 0, 0)
+
+	.footer__top
+		left: auto
+		right: 100%
+
+@media screen and (max-width: 660px) and (min-width: 360px)
+	.service
+		display: flex
+		align-items: center
+
+		&__img
+			margin-bottom: 0
+			width: 60px
+			margin-right: 15px
+
+		&__bot
+			width: calc(100% - 75px)
+
+			&-text
+				max-width: none
+				margin-right: 15px
+
+
+@media screen and (max-width: 370px)
+	
+	.cat-item__btns
+		flex-direction: column
+
+
+		&-primary
+			.default-btn
+				// border: 1px solid var(--mainColor)
+			&:not(:last-child)
+				margin-right: 0
+
+		&-second
+			margin-top: 15px
+			a 
+				margin: 0

@@ -1,0 +1,65 @@
+.title-block
+	flex: 1 1 auto
+
+	+ .search
+		margin-left: rem(40)
+
+	&__cont
+		margin: 0 0 rem(40)
+
+		.search
+			position: relative
+
+			&__input
+				size: 248px 35px
+				border: none
+				border-bottom: 1px solid var(--borderColor)
+				padding: 3px 30px 3px 0
+
+			&__submit
+				position: absolute 0 0 1px *
+				width: 27px 
+				border: none
+				padding: 0
+				text-indent: -9999px
+				overflow: hidden
+				background: url("../img/ico-title-search.svg") center no-repeat, #fff
+
+		.wrapper
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+
+	&__crumbs
+		margin-bottom: rem(13)
+
+	&__title
+
+		h1
+			font-weight: bold
+			font-size: rem(24)
+
+.bread-crumbs
+	font-size: rem(14)
+	line-height: lh(20, 14)
+	// color: #a6a8b3
+
+	li
+		display: inline-block
+
+	&__link
+
+		&:not(:hover, :focus, :active)
+			color: #a6a8b3
+
+		&:after
+			content: "/"
+			display: inline-block
+			margin-left: 4px
+			color: #a6a8b3
+
+		&:not(:last-child)
+			margin-right: 3px
+
+	&__this
+		color: #a6a8b3

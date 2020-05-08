@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Корзина
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Корзина
+							.title-block__title
+								h1 Корзина
+				.inner-content__content
+					.cart__cont
+						.wrapper
+							.cart
+								table.cart__table
+									thead
+										tr
+											th Наименование  /  Цена
+											th Количество
+											th Стоимость
+									tbody
+										- for (let i = 0; i < 2; i++)
+											tr
+												td.cart-tovar__td
+													.cart-tovar
+														a.cart-tovar__img(href="#")
+															img(src="img/photos/cart-img.png", alt="")
+														.cart-tovar__desc
+															.cart-tovar__title
+																a(href="#") Компресионные чулки
+															.cart-tovar__text Размер: 
+																b S
+																| , цвет: 
+																b белый
+															.cart-tovar__prices
+																.cart-price.cart-price--last 1 399.90 
+																	i.rub ₽
+																.cart-price 1 399.90 
+																	i.rub ₽
+												td.cart-tovar__count
+													.tovar-count
+														a.tovar-count__minus(href="#")
+														input.tovar-count__input(type="tel" value="1")
+														a.tovar-count__plus(href="#")
+												td.cart-tovar__price
+													.cart-tovar__price
+														.tova-price
+															.tovar-price__price
+																.cart-price 1 399.90 
+																	i.rub ₽
+														.tova-price__favorite
+															a.favorite-link(href="#" title="В избранное")
+														.tova-price__delete
+															a.del(href="#")
+
+								.cart__footer
+									.cart-footer
+										.cart-footer__promo
+											.promo
+												form
+													input.promo__input(type="text")
+													label.promo__label Введите промокод:
+										.cart-footer__itog
+											.cart-itog Итого: 1 399.90 
+												i.rub ₽
+										.cart-footer__btns
+											a.bordered-btn(href="#") Продолжить покупки
+											a.second-btn(href="#") Заказать в 1 клик
+											a.default-btn(href="#") Оформить заказ
+		include inc/footer.pug
+		include inc/scripts.pug

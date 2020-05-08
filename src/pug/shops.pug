@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Адреса салонов
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Адреса салонов
+							.title-block__title
+								h1 Адреса салонов
+				.inner-content__content
+					.shops__cont
+						.wrapper
+							.shops
+								each city in ["Челябинск", "Екатеринбург"]
+									.shops__list
+										.shops__list-title=city
+										.shops-list
+											.shops-list__item
+												.shop
+													.shop__desc
+														address.shop__address
+															div
+																span ул. Воровского, д. 81
+
+																<!-- в этой ссылку первая кратинка -->
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery") Посмотреть фото
+
+																<!-- Последующие картинки -->
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+														address.shop__phones
+															div
+																a(href="tel: 8 (900) 000-00-00") 8 (900) 000-00-00
+														time.shop__time
+															div
+																span 9:00 - 20:00
+														.shop__btn
+															div
+																button.toggle-map-btn(data-toggle-text="Свернуть") Показать на карте
+													.shop__map
+														.shop-map
+															img(src="img/photos/shops-map.jpg")
+											.shops-list__item
+												.shop
+													.shop__desc
+														address.shop__address
+															div
+																span ул. Воровского, д. 81
+
+																<!-- в этой ссылку первая кратинка -->
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery") Посмотреть фото
+
+																<!-- Последующие картинки -->
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+																a.fancybox(href="img/photos/shops-map.jpg" data-fancybox="gallery")
+														address.shop__phones
+															div
+																a(href="tel: 8 (900) 000-00-00") 8 (900) 000-00-00
+														time.shop__time
+															div
+																span 9:00 - 20:00
+														.shop__btn
+															div
+																button.toggle-map-btn(data-toggle-text="Свернуть") Показать на карте
+													.shop__map
+														.shop-map
+															img(src="img/photos/shops-map.jpg")
+		include inc/footer.pug
+		include inc/scripts.pug

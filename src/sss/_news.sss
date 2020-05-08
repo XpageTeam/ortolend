@@ -1,0 +1,44 @@
+.news
+
+	&__item
+
+		&:not(:first-child)
+			margin: rem(30) 0 0
+
+.news-one
+	display: flex
+	align-items: center
+
+	&__img
+		flex: none
+		margin-right: 2rem
+
+		img
+			display: block
+			// width: 100%
+
+	&__desc
+		font-weight: 400
+
+	&__title
+		font-size: rem(18)
+		line-height: lh(26, 18)
+		max-width: 645px
+
+		a
+			color: inherit
+			font: inherit
+			border: none 
+
+	&__date
+		color: #a6a8b3
+		font-size: rem(12)
+		white-space: nowrap
+
+		&:not(:first-child)
+			margin: 14px 0 0
+
+	&__preview
+
+		&:not(:last-child)
+			margin-bottom: 25px

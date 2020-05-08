@@ -1,0 +1,181 @@
+.right-btns
+	position: fixed
+	right: 0
+	top: 0
+	bottom: 0
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+.btns
+
+	&__btn
+		background: var(--mainColor)
+		display: flex
+		justify-content: center
+		align-items: center
+		size: 47px 56px
+		transition: background .3s ease
+
+		&:not(:first-child)
+			margin: 1px 0 0
+
+		&:hover, &:focus
+			background-color: lighten(#afca58, .1) !important
+
+.head
+
+	&__top
+		background: #fff
+		box-shadow: var(--boxShadow)
+
+
+
+	&__bot
+		margin: rem(50) 0 0
+
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 18px 0 20px
+
+	&__logo
+		flex: none
+
+	&__nav, &__logo
+
+		&:not(:last-child)
+			margin-right: 57px
+
+	&__phone
+		margin-right: 48px
+
+	&__search, &__cart, &__lc
+
+		&:not(:last-child)
+			margin-right: rem(17)
+
+	
+
+.menu
+	display: flex
+	font-weight: 400
+
+	&__link
+		font: inherit
+		font-size: rem(14)
+		position: relative
+		white-space: nowrap
+
+		&:after
+			content: ""
+			height: 2px
+			background: var(--mainColor)
+			position: absolute calc(100% + 31px) 0 * 0
+			transition: transform .3s ease
+
+		&:not(:hover, .active):after
+			transform: scale3d(0, 1, 1)
+
+		&.active
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: vw(24)
+
+.head-phone
+
+	span
+		display: block
+		font-size: rem(12)
+		color: #7f7f7f
+		white-space: nowrap
+
+	a
+		color: var(--mainColor)
+		font-weight: bold
+		font-size: rem(20)
+		line-height: lh(20, 18)
+
+.search-btn, .lc-link, .cart-link
+	display: block
+
+.search-btn
+	border: none
+	background: url("../img/ico-search.svg") no-repeat
+	size: width("../img/ico-search.png") height("../img/ico-search.png")
+
+.cart-link
+	background: url("../img/ico-cart.svg") no-repeat
+	size: width("../img/ico-cart.png") height("../img/ico-cart.png")
+
+	&[data-count]
+		position: relative
+
+		&:after
+			content: attr(data-count)
+			position: absolute -3px -7px * *
+			border-radius: 50%
+			color: #fff
+			background: var(--mainColor)
+			size: 17px
+			line-height: 17px
+			text-align: center
+			font-size: 9px
+
+.lc-link
+	background: url("../img/ico-lc.svg") no-repeat
+	size: width("../img/ico-lc.png") height("../img/ico-lc.png")
+
+.logo
+	display: block
+
+	img
+		display: inherit
+
+.bot-menu
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+	margin-bottom: -14px
+	position: relative
+
+	&:matches(:before, :after)
+		position: absolute 0 *
+		content: ""
+		background: #fff
+		z-index: 2
+		width: 36px
+
+	&:before
+		left: 0
+
+	&:after
+		right: 0
+
+	&__item
+		margin: 0 36px 14px 
+
+		&:not(:last-child)
+			position: relative
+
+			&:after
+				border-radius: 50%
+				content: ""
+				size: 4px
+				background: var(--mainColor)
+				position: absolute calc(50% - 2px) -36px * *
+
+	&__link
+		background-image: linear-gradient(var(--mainColor), var(--mainColor))
+		background-position: 0% 100%
+		background-repeat: no-repeat
+		background-size: 0% 1px
+		transition: background-size .3s
+		padding-bottom: 2px
+
+		&:hover, &:focus
+			background-size: 100% 1px

@@ -1,0 +1,36 @@
+.brands
+
+	&__sort
+		margin: 0 0 rem(40)
+
+	&__list
+		column-count: 4
+
+		+ .brands__list
+			border-top: 1px solid var(--borderColor)
+			margin: rem(45) 0 0
+			padding: rem(50) 0 0
+
+	&__item
+		break-inside: avoid
+
+		&:not(:first-child)
+			margin: rem(65) 0 0
+
+		&[data-letter]
+
+			&:before
+				content: attr(data-letter)
+				display: block
+				font-weight: bold
+				font-size: rem(35)
+				line-height: 1
+				margin-bottom: rem(30)
+
+.brand
+
+	&__link
+		border-bottom: 1px solid transparent
+
+		&:hover
+			border-color: currentColor

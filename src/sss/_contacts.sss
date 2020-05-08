@@ -1,0 +1,115 @@
+.contacts
+
+	&-addresses
+		display: flex
+
+		&__big, &__small
+			display: flex
+			flex-direction: column
+
+		&__big
+			flex: 1 1 auto
+
+		&__small
+			flex: none
+			width: 299px
+			margin-left: 32px
+
+	&__map
+		margin: rem(55) 0 0
+
+.big-address
+	flex: 1 1 auto
+
+	&__title
+		margin-bottom: rem(35)
+
+	&__list
+		display: flex
+
+		&-left, &-right
+			width: 50%
+
+		&-right
+			padding-left: vw(111)
+
+		&-left
+			border-right: 1px solid var(--borderColor)
+			padding-right: vw(111)
+
+	&__bot
+		margin: rem(62) 0 0
+
+.big-address
+	border: 1px solid var(--borderColor)
+	padding: rem(45) rem(52) rem(65)
+
+	&__bot
+		display: flex
+		flex-wrap: wrap
+
+		&-title
+			width: 100%
+
+		.address
+
+			&:not(:last-child)
+				margin-right: vw(220)
+
+.small-address
+	display: flex
+	flex-direction: column
+	flex: 1 1 auto
+
+	&__item
+		flex: 1 1 auto
+		border: 1px solid var(--borderColor)
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding: rem(45)
+
+		&:not(:first-child)
+			margin: rem(30) 0 0
+
+		.big-address
+
+			&__title
+				margin-bottom: 0
+
+.address-title
+	font-weight: bold
+	font-size: rem(18)
+
+.address
+	font-weight: 400
+	font-size: rem(14)
+	line-height: lh(20, 14)
+	padding-left: 26px
+
+	&:not([class*="--phone"])
+		background: url("../img/ico-loc-small.svg") top 2px left no-repeat
+
+	&--phone
+		background: url("../img/ico-phone-small.svg") top 4px left no-repeat
+
+	span
+		color: #7f7f7f
+		line-height: lh(22, 14)
+		display: block
+		margin: 5px 0 0
+
+	&:not(:first-child)
+		margin: rem(28) 0 0
+
+	.shop__time
+
+		> div
+			margin-left: -26px
+			padding-left: 26px
+
+.contacts-map
+
+	img
+		display: block
+		width: 100%

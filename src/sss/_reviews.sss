@@ -1,0 +1,35 @@
+.reviews
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -35px -2rem
+
+	&__item
+		display: flex
+		flex-direction: column
+		width: calc((100% - 2rem * 2) / 2)
+		margin: 0 0 35px 2rem
+
+.review
+	border: 1px solid var(--borderColor)
+	flex: 1 1 auto
+	padding: rem(38) rem(47) rem(45)
+	font-weight: 400
+
+	&__text
+		max-width: 520px
+		font-size: rem(14)
+		line-height: lh(22, 14)
+
+	&__title
+
+		&:not(:empty)
+			margin-bottom: rem(27)
+			background: url("../img/ico-user.svg") top 5px left no-repeat
+			padding-left: 31px
+
+	&__name
+		font-size: rem(18)
+
+	&__date
+		color: rgba(0,0,0, .5)
+		font-size: rem(12)

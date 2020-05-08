@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Компресионные гольфы
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Каталог
+									span.bread-crumbs__this Компресионные гольфы
+							.title-block__title 
+								h1 Компресионные гольфы
+				.inner-content__content
+					.tovar__cont
+						.wrapper
+							.tovar
+								.tovar__top
+									.tovar-top
+										.tovar-top__slider
+											.tovar-slider__big
+												.big-slider
+													- for (let i = 0; i < 5; i++)
+														a.big-slider__slide.fancybox(href="img/photos/tovar-img.jpg" data-fancybox="tovar-slider")
+															img(src="img/photos/tovar-img.jpg")
+											.tovar-slider__small
+												.small-slider
+													- for (let i = 0; i < 5; i++)
+														.small-slider__slide
+															img(src="img/photos/tovar-img.jpg")
+										.tovar-top__desc
+											.tovar-desc
+												table.tovar-desc__table
+													thead
+														tr
+															th 
+																.tovar-price 1 399
+																	span .90 
+																		i.rub ₽
+															th 
+																.tovar-buy
+																	.tovar-buy__favorite
+																		a.favorite-link(href="#" title="В избранное")
+																	.tovar-buy__count
+																		.tovar-count
+																			a.tovar-count__minus(href="#")
+																			input.tovar-count__input(type="tel" value="1")
+																			a.tovar-count__plus(href="#")
+																	.tovar-buy__tocart
+																		a.add-to-cart(href="#" title="В корзину")
+													tbody
+														tr
+															td Размер
+															td 
+																ul.sizes
+																	each size, i in ["X-S", "S", "S-X", "M", "M-X", "L", "L-X", "X-L", "XL-X", ]
+																		li.sizes__item
+																			.size
+																				if (i == 0)
+																					input.size__input(checked="" name="size" type="radio" id=size)
+																				else
+																					input.size__input(name="size" type="radio" id=size)
+																				label.size__label(for=size)=size
+																	li.sizes__full
+																		a.another-sizes.fancybox(href="#") Подобрать размер
+														tr
+															td Состав
+															td 48% хлопок, 21% латекс, 31% полиамид
+														tr
+															td Инструкция по применению
+															td Рекомендуется надевать утром, лежа, 
+																br
+																| постепенно натягивая его
+														tr
+															td Цвет
+															td 
+																ul.colors
+																	each color, i in ["fff", "835e44", "000", ]
+																		li.colors__item
+																			if (i == 1)
+																				a.color.active(href="#" style="background-color: #"+color)
+																			else
+																				a.color(href="#" style="background-color: #"+color)
+
+										.tovar-top__aside
+											.tovar-sale
+												.tovar-sale__title Скидка при заказе через интернет
+												each sale, i in ["Бесплатная доставка от 3000 Р", "Примерка перед покупкой", ]
+													.tovar-sale__item
+														.tovar-item
+															.tovar-item__img
+																img(src="img/photos/sale-"+i+".png", alt="")
+															.tovar-item__text=sale
+
+								.tovar__tabs
+									.tabs
+										.tabs__tabs
+											.tabs-tab.active(data-id="0") Описание
+											.tabs-tab(data-id="1") Где купить? 
+											.tabs-tab(data-id="2") Отзывы
+											.tabs-tab(data-id="3") Подбор размера
+										.tabs__main
+											.tabs-content.active(data-id="0")
+												.text-page
+													p Эффективное современное средство для профилактики венозных тромбозов и эмболии легочной артерии в условиях стационара. Эластичные чулки также подходят для компрессионного лечения после операций на венах в нижней области конечностей. Они обеспечивают оптимальный уровень компрессии, под воздействием которого вены сужаются, увеличивается скорость кровотока и уменьшается застой крови в ногах. Универсальный дизайн подойдет как для женщин, так и для мужчин. Плотная эластичная резинка надежно фиксирует чулок на ноге, не позволяя ему соскальзывать вниз. 
+											.tabs-content(data-id="1")
+												.text-page
+													p Эффективное современное средство для профилактики венозных тромбозов и эмболии легочной артерии в условиях стационара. Эластичные чулки также подходят для компрессионного лечения после операций на венах в нижней области конечностей. Они обеспечивают оптимальный уровень компрессии, под воздействием которого вены сужаются, увеличивается скорость кровотока и уменьшается застой крови в ногах. Универсальный дизайн подойдет как для женщин, так и для мужчин. Плотная эластичная резинка надежно фиксирует чулок на ноге, не позволяя ему соскальзывать вниз.
+											.tabs-content(data-id="2")
+												.tovar__reviews
+													.reviews__title отзывы клиентов
+													.reviews
+														.reviews__one
+															.reviews__one-top
+																.reviews__one-user
+																	.reviews__one-username Антон Калуга
+																.reviews__one-date-rating
+																	.reviews__one-date 24.12.2014
+																	ul.rating__list
+																		li.rating__start.active
+																		li.rating__start.active
+																		li.rating__start.active
+																		li.rating__start.active
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+															.reviews__one-text
+																.text-page
+																	p Эффективное современное средство для профилактики венозных тромбозов и эмболии легочной артерии в условиях стационара. Эластичные чулки также подходят для компрессионного лечения после операций на венах в нижней области конечностей. Они обеспечивают оптимальный уровень компрессии, под воздействием которого вены сужаются, увеличивается скорость кровотока и уменьшается застой крови в ногах. Универсальный дизайн подойдет как для женщин, так и для мужчин. Плотная эластичная резинка надежно фиксирует чулок на ноге, не позволяя ему соскальзывать вниз.
+														.reviews__one
+															.reviews__one-top
+																.reviews__one-user
+																	.reviews__one-username Антон Калуга
+																.reviews__one-date-rating
+																	.reviews__one-date 24.12.2014
+																	ul.rating__list
+																		li.rating__start.active
+																		li.rating__start.active
+																		li.rating__start.active
+																		li.rating__start.active
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+																		li.rating__start
+															.reviews__one-text
+																.text-page
+																	p Эффективное современное средство для профилактики венозных тромбозов и эмболии легочной артерии в условиях стационара. Эластичные чулки также подходят для компрессионного лечения после операций на венах в нижней области конечностей. Они обеспечивают оптимальный уровень компрессии, под воздействием которого вены сужаются, увеличивается скорость кровотока и уменьшается застой крови в ногах. Универсальный дизайн подойдет как для женщин, так и для мужчин. Плотная эластичная резинка надежно фиксирует чулок на ноге, не позволяя ему соскальзывать вниз.
+													.tovar__reviews-btn
+														a.default-btn.fancybox(href="#product-review") Добавить отзыв
+											.tabs-content(data-id="3")
+												.text-page
+													img(src="img/img.png")
+													iframe(width="560" height="315" src="https://www.youtube.com/embed/kFSL0iR30JI?start=19" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+		include inc/footer.pug
+		include inc/scripts.pug

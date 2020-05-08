@@ -1,0 +1,146 @@
+.main-banners
+
+	&__cont
+		margin: rem(70) 0 0
+
+	&__mid
+		margin: 2rem 0 0
+
+	&__top
+		margin: 0 0 -30px -30px
+
+		&:after
+			content: ""
+			clear: both
+			display: table
+
+		&-item
+			float: left
+			margin: 0 0 30px 30px
+
+			&--vertical
+				width: calc((102.7% - 30px * 4) / 4)
+
+				.main-banners
+
+					&__top
+
+						&-item
+
+				.small-banner
+
+					&__desc
+						padding: rem(72) rem(40) 0
+
+
+			&--hor
+
+				.small-banner
+
+					&__desc
+						padding: 1rem rem(60)
+						display: flex
+						flex-direction: column
+						align-items: flex-start
+						justify-content: center
+
+.small-banner
+	position: relative
+	display: block
+
+	&__img
+
+		img
+			display: block
+			width: 100%
+
+	&__desc
+		position: absolute 0
+		color: #fff
+		z-index: 2
+
+	&__title
+		font-weight: bold
+		font-size: rem(24)
+		line-height: lh(28, 24)
+		margin: 0 0 rem(25)
+
+@supports (display: grid)
+	.main-banners
+
+		&__top
+			display: grid
+			grid-template-columns: repeat(4, 1fr)
+			grid-gap: 30px
+			margin: 0 !important
+
+			&:after
+				display: none
+
+			&-item
+				float: none
+				width: auto !important
+				margin: 0 !important
+				display: flex
+				flex-direction: column
+				
+				&--vertical
+					grid-row: span 2
+
+				&--hor
+					grid-column: span 2
+
+	.small-banner
+		flex: 1 1 auto
+		display: flex
+		flex-direction: column
+
+		&__img
+			flex: 1 1 auto
+			display: flex
+			flex-direction: column
+
+			img
+				flex: 1 1 auto
+				object-fit: cover
+				object-position: center
+
+.mid-banners
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -31px -31px
+
+	&__item
+		width: calc((100% - 31px * 3) / 3)
+		margin: 0 0 31px 31px
+
+.mid-banner
+
+	&__img
+
+		img
+			display: block
+			width: 100%
+
+.bot-banner
+	margin: rem(69) 0 0
+
+	&__img
+		position: relative
+		display: block
+
+		picture, img
+			display: block
+			width: 100%
+
+		&-text
+			position: absolute 0
+			display: flex
+			align-items: center
+			padding: 1rem rem(70)
+
+	&__title
+		font-size: rem(45)
+		line-height: 1
+		color: #fff
+		margin-right: rem(40)

@@ -1,0 +1,84 @@
+.shops
+
+	&__list
+
+		&-title
+			font-weight: bold
+			font-size: 18px
+			line-height: calc(20 / 18)
+			margin-bottom: 18px
+
+		&:not(:first-child)
+			margin: rem(42) 0 0
+
+.shops-list
+
+	&__item
+
+		&:not(:first-child)
+			margin: 30px 0 0
+
+.shop
+	border: 1px solid var(--borderColor)
+	padding-left: rem(68)
+	padding-right: rem(68)
+
+	&__map
+		padding-bottom: 33px
+		display: none
+
+	&__desc
+		display: flex
+		padding: 34px 0
+
+		> *
+			flex: 1 1 auto
+			display: flex
+			justify-content: center
+			font-size: 14px
+
+			> div
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				padding-left: 27px
+
+			&:not(:last-child)
+				border-right: 1px solid var(--borderColor)
+
+	&__address
+		flex: 2 1 auto
+		justify-content: flex-start
+
+		> div
+			background: url("../img/ico-small-loc.svg") top 4px left no-repeat
+
+		a
+			color: var(--mainColor)
+			border-bottom: 1px solid #ecf2dc
+
+	&__phones
+
+		> div
+			padding: 0
+
+		a
+			color: #000
+			padding-left: 27px
+			border: none
+			background: url("../img/ico-phone-small.svg") top 4px left no-repeat
+
+			&:not(:first-child)
+				margin: 6px 0 0
+
+	&__time
+
+		> div
+			background: url("../img/ico-clock.svg") top 4px left no-repeat
+
+.toggle-map-btn
+	color: #fff
+	border: none
+	background: var(--mainColor)
+	padding: 6px 20px 7px
+	font-size: 14px

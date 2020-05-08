@@ -1,0 +1,227 @@
+.tovar
+
+	&-top
+		display: flex
+
+		&__desc
+			flex: 1 1 auto
+			margin: 0 28px
+
+		&__slider, &__aside
+			flex: none
+
+		&__aside
+			width: 271px
+
+		&__slider
+			width: 336px
+			position: relative
+
+	&__tabs
+		margin: rem(54) 0 0
+
+.tovar-slider
+
+	&__big
+		width: 336px
+
+	&__small
+		margin: 22px 0 0
+
+.big-slider
+
+	> .big-slider__slide
+		display: none
+
+	&__slide
+		display: block !important
+
+		img
+			display: block
+
+.small-slider
+	margin: 0 -11px
+
+	> .small-slider__slide
+		display: none
+
+	&__slide
+		display: block !important
+		cursor: pointer
+		padding: 0 11px
+
+		img
+			display: block
+
+.tovar-buy
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	&__favorite
+
+		.favorite-link
+
+			&:before, &:after
+				size: 20px 18px
+
+.tovar-price
+	font-weight: bold
+	font-size: rem(25)
+	white-space: nowrap
+	line-height: 1
+	display: flex
+	align-items: flex-start
+	flex-direction: column
+
+	span
+		font-size: rem(20)
+
+	> *
+		&:not(:first-child)
+			margin-top: 10px
+
+.privelegia
+	font-size: rem(16)
+	
+// .free-delivery-hint
+// 	margin-left: 0
+// 	margin-top: 5px
+
+.tovar-desc
+
+
+
+	&__table
+		width: 100%
+		text-align: left
+
+		th
+			vertical-align: middle
+			border-bottom: 1px solid var(--borderColor)
+			border-top: 1px solid var(--borderColor)
+			padding-top: 16px
+			padding-bottom: 16px
+
+			&:last-child
+				padding-right: vw(65)
+
+		td, th
+			padding-left: 27px
+			padding-right: 10px
+
+		td
+			vertical-align: top
+			padding-top: 21px
+			padding-bottom: 21px
+			font-size: rem(14)
+
+		tr
+
+			&:nth-child(even)
+
+				td
+					background: var(--secondColor)
+
+.add-to-cart
+	display: inline-block
+	background: url("../img/ico-add-to-cart.svg") no-repeat
+	background-size: contain
+	size: 24px 22px
+
+.tovar-sale
+	position: sticky
+	top: 20px
+	padding: rem(45) rem(30) rem(55) rem(40)
+	background: var(--secondColor)
+
+	&__title
+		font-weight: bold
+		font-size: rem(20)
+		line-height: lh(24, 20)
+		margin-bottom: 42px
+
+	&__item
+
+		+ .tovar-sale__item
+			margin: 34px 0 0
+
+.tovar-item
+
+	&__img
+		margin-bottom: 16px
+
+		img
+			display: block
+
+.colors
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -14px -14px
+
+	&__item
+		flex: none
+		margin: 0 0 14px 14px
+
+.color
+	display: block
+	size: 29px
+	border: 2px solid transparent
+	transition: border-color .3s ease
+
+	&:matches(.active, :hover)
+		border-color: var(--mainColor)
+
+.sizes
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -4px -4px
+
+	&__item
+		margin: 0 0 4px 4px
+
+	&__full
+		width: 100%
+		margin: 8px 0 0
+
+.another-sizes
+	color: var(--mainColor)
+	border-bottom: 1px solid currentColor
+
+.size
+	position: relative
+
+	&__input
+		position: absolute
+		opacity: 0
+		left: 0
+		top: 0
+
+		&:checked
+
+			+ label
+				background: var(--mainColor)
+				color: #fff
+
+	&__label
+		transition: color .3s ease, background .3s ease
+		padding: 7px 8px
+		border-radius: 7px
+		cursor: pointer
+
+@media screen and (max-width: 667px)
+
+	.tovar-desc__table
+		position: relative
+		margin-top: 25px
+	
+	.tovar-price
+		display: flex
+		flex-direction: column-reverse
+
+	.free-delivery-hint
+		margin-left: 0
+		position: absolute
+		top: -40px
+		left: 0
+

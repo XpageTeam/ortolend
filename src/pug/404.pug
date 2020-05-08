@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.inner-content__content
+					.wrapper
+						.error-404
+							.error-404__number 404
+							.error-404__title Ой, что-то пошло не так :(
+							.error-404__text Страница не найдена
+							.error-404__btn
+								a.default-btn(href="#") Вернуться назад
+		include inc/footer.pug
+		include inc/scripts.pug

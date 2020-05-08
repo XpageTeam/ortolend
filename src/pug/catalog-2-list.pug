@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Каталог
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Каталог
+							.title-block__title
+								h1 Каталог
+				.inner-content__content
+					.catalog__cont
+						.wrapper
+							.catalog
+								.catalog__aside
+									aside.catalog-aside(data-widget="sticky-holder")
+										.catalog-aside__menu
+											.aside-menu
+												.aside-menu__title Стельки
+												ul.aside-menu__list
+													each item in ["Ортопедически стельки для взрослых", "Детские ортопедические стельки", "Индивидуальные стельки VimaNova", ]
+														li.aside-menu__item
+															a.aside-menu__link(href="#")
+																span=item
+											.catalog-aside__filter
+												.filter
+													.filter__item
+														.filter__item-title Цена
+														.filter__item-content
+															.price-filter
+																.price-filter__inputs
+																	input.price-filter__input(data-min="0" name="min" type="tel" value="0")
+																	input.price-filter__input(data-max="20000" name="max" type="tel" value="1000")
+																.price-filter__range
+																	i.range
+													.filter__item
+														.filter__item-content
+															.filter-checkboxes
+																each title, i in ["Новинка", "Акция", ]
+																	.filter-checkboxes__item
+																		.checkbox
+																			input.checkbox__input(id="filter-"+i type="checkbox")
+																			label.checkbox__label(for="filter-"+i)=title
+													.filter__btns
+														input.default-btn.filter-submit(type="submit" value="Показать")
+														a.bordered-btn.filter-submit(href="#") Показать
+								.catalog__cat2
+									.sort
+										.sort__filter-btn
+											button.filter-btn
+										.sort__select-cont
+											.sort__select-label Сортировать по:
+											select.sort__select
+												option(value="1") по популярности
+												option(value="2") по популярности
+												option(value="3") по популярности
+										.sort__select-cont
+											.sort__select-label Показывать:
+											select.sort__select
+												option(value="1") 8 шт
+												option(value="2") 8 шт
+												option(value="3") 8 шт
+										.sort__view
+											.view
+												a.view__list(href="#")
+												a.view__plate.active(href="#")
+									.cat2.list
+										- for (let i = 0; i < 4; i++)
+											each title, i in ["Компрессионные гольфы",]
+												.cat2__item
+													.cat-item
+														a.cat-item__img(href="#")
+															img(src="img/photos/cat-list-item.jpg", alt=title)
+														.cat-item__desc
+															.cat-item__title
+																a(href="#")=title
+															.cat-item__price
+																.cat-price 1 399 руб
+															.cat-item__btns
+																.cat-item__btns-primary
+																	a.default-btn(href="#") В корзину
+																.cat-item__btns-second
+																	a.second-btn.fancybox(href="#") Заказать в один клик
+														.cat-item__buy
+															.cat-item__links
+																a.favorite-link(href="#" title="В избранное")
+																a.compare-link(href="#" title="Добавить к сравнению")
+		include inc/footer.pug
+		include inc/scripts.pug

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Контакты
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Контакты
+							.title-block__title
+								h1 Контакты
+				.inner-content__content
+					.contacts__cont
+						.wrapper
+							.contacts
+								.contacts__top
+									.contacts-addresses
+										.contacts-addresses__big
+											.big-address
+												.big-address__title
+													.address-title Челябинск
+												.big-address__list
+													.big-address__list-left
+														each address, i in ["ул. Воровского, д. 81", "ул. Свердловский проспект, д. 80", "ул. Проспект Ленина, д. 38 ", "ул. Горького, д. 19", "ул. Свердловский проспект, д. 7", ]
+															address.address=address
+																if (i == 2)
+																	span (на территории поликлиники № 1, в детском ортопедо-травматологическом отделении (возле центрального рынка со стороны ул. Российской)
+																.shop__timew
+													.big-address__list-right
+														each address, i in ["ул. Молодогвардейцев, д. 39Б", "ул. Братьев Кашириных, д. 152", "ул. Гагарина, д. 16", "ул. 5-я Электровозная, д. 5 ", "ул. Румянцева, д. 38", ]
+															address.address=address
+																if (i == 0)
+																	span (рядом с роддомом больницы скорой помощи)
+																if (i == 3)
+																	span (в помещении поликлиники ГКБ № 9, ул. 5-я электровозная, д. 5, травмпункт)
+																.shop__time
+																	div
+																		span 9:00 - 20:00
+												.big-address__bot
+													.big-address__bot-title Протезно-ортопедический центр, индивидуальный прием в сложных случаях:
+													address.address ул. Аптечная, д. 6А
+													address.address.address--phone
+														a(href="tel: +7(351)253-67-76") +7(351)253-67-76
+										.contacts-addresses__small
+											.small-address
+												.small-address__item
+													.big-address__title
+														.address-title Екатеринбург (салоны «Орфея»)
+													address.address ул. Луначарского, д. 57
+													address.address  ул. Волгоградская, д. 190
+												.small-address__item
+													.big-address__title
+														.address-title Магнитогорск
+													address.address ул. Октябрьская, д. 19
+												.small-address__item
+													.big-address__title
+														.address-title Златоуст
+													address.address ул. Зелёная, д. 16
+								.contacts__map
+									.contacts-map
+										img(src="img/photos/contacts-map.jpg", alt="")
+		include inc/footer.pug
+		include inc/scripts.pug

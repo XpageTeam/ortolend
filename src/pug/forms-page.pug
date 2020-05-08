@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Формы
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content__cont
+				.wrapper
+					.inner-content
+						.title-block
+							.title-block__crumbs
+								ul.bread-crumbs
+									li.bread-crumbs__link(itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb")
+										a(href="#" title="Главная" itemprop="url")
+											span(itemprop="title") Главная
+									li.bread-crumbs__this Оформление заказа
+							.title-block__title
+								h1 Формы
+						.forms-page
+							.forms-page__item
+								a.default-btn.fancybox(href="#subscribe") Подписка
+		include inc/footer.pug
+		include inc/scripts.pug

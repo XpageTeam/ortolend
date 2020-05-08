@@ -1,0 +1,45 @@
+footer.footer
+	.wrapper
+		.footer__top
+			each col, i in [{title: "ОРТОЛЭНД", menu: ["Об ОРТОЛЭНДе", "Адреса салонов", "Акции и скидки", "Карьера в ОРТОЛЭНДе"]}, {title: "Интернет-магазин", menu: ["Доставка и оплата", "Где можно забрать заказ", "Возврат и обмен покупок", "Подарочные карты", "Договор оферты",]}, {title: "Прием врача", menu: ["Компьютерная диагностика", "Изготовление индивидуальных стелек", "Центр лечения сколиоза"]}, {title: "Услуги", menu: ["Компьютерная диагностика стоп", "Изготовление индивидуальных стелек", "Центр лечения сколиоза"]}]
+				.footer__col
+					.footer__col-title=col.title
+					nav.footer-menu
+						ul.footer-menu__list
+							each title, j in col.menu
+								if (i==0 && j==0)
+									li
+										a.footer-menu__link.active(href="#")=title
+								else
+									li
+										a.footer-menu__link(href="#")=title
+			.footer__col.footer__col--contacts
+				.footer__col-title Наши контакты
+				.footer__contacts
+					.f-contacts
+						.f-contacts__phones
+							address.f-phones
+								.f-phones__current
+									a(href="tel: 8 (351) 211-16-97") 8 (351) 211-16-97
+								ul.f-phones__list
+									- for (let i = 0; i < 3; i++)
+										li.f-phones__el
+											a(href="tel: +7(000)0000010") +7 (000) 000-00-10
+						.f-contacts__address
+							address.f-address
+								p Челябинск
+								p ул. Лермонтова 21, 3 этаж, офис 4
+		.footer__bot
+			.footer__copy
+				.copy
+					span 2018 © ОРТОЛЭНД 
+			.footer__soc
+				.soc
+					each socName in ["vk", "fb", "inst"]
+						a.soc__link(href="#" style='background-image: url("img/ico-'+socName+'.png")')
+			.footer__feddback
+				.feedback
+					.feedback__title Мы всегда на связи
+					.feedback__btn
+						a.default-btn.fancybox(href="#") Связаться с нами
+include forms.pug

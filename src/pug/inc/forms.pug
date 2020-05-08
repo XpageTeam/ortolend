@@ -1,0 +1,13 @@
+.forms#subscribe
+	.forms__title Не пропустите ничего важного
+	.forms__text Подпишитесь на нашу рассылку, чтобы быть 
+		br
+		| всегда в курсе наших новинок
+	form(action="#")
+		.forms-wrap
+			.forms__input-cont
+				input.forms__input.forms__input--error(required="" type="email" placeholder="E-mail")
+				.forms__error-message Сообщение об ошибке
+					.forms__error-message-icon
+		.forms__submit
+			input.default-btn(type="submit" value="Подписаться")

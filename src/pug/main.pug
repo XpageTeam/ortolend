@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.right-btns
+				a.btns__btn(href="#")
+					img(src="img/ico-favorite-white.svg")
+				a.btns__btn.fancybox(href="#")
+					img(src="img/ico-phone-white.svg")
+			.main-content
+				.wrapper
+					.main-slider
+						- for (let i = 0; i < 3; i++)
+							a.main-slider__slide(href="#")
+								picture.main-slider__slide-img
+									source(srcset="img/photos/main-banner.jpg" data-main="" media="screen and (min-width: 660px)")
+									source(srcset="img/photos/main-banner-portrait.jpg" media="screen and (max-width: 660px)")
+									img
+								.main-slider__slide-text
+									.main-slider__slide-title 500 рублей в подарок
+									.main-slider__slide-btn
+										.more-btn
+											span Подробнее
+											span.more-btn__circle
+					.main-services__cont
+						.main-title Услуги
+						.main-services
+							each service, i in ["Записаться на прием к ортопеду", "Заказать индивидуальные стельки", "Заказать индивидуальную обувь", "Пройти диагностику стопы", ]
+								.main-services__item
+									a.service(href="#")
+										figure.service__img
+											img(src="img/photos/service-"+i+".png")
+										.service__bot
+											.service__bot-text=service
+											.service__bot-btn
+												.more-btn
+													span.more-btn__circle
+					.main-catalog
+						.main-catalog__title-cont
+							.main-title Популярные товары
+						.main-catalog__list
+							.main-cat
+								each item, i in [{title: "Компрессионные гольфы", price: "1 399"}, {title: "Ортопедические стельки VimaNova", price: "1 799"}, {title: "Вспомогательное устройство для компрессионного трикотажа", price: "2 199"}, {title: "Детские ортопедические матрасы", price: "2 999"}, ]
+									.main-cat__one
+										.cat-item
+											a.cat-item__img(href="#")
+												img(src="img/photos/cat-item-"+i+".jpg", alt=item.title)
+											.cat-item__links
+												.cat-item__links-left
+													.cat-item__label.cat-item__label--sale -30%
+												.cat-item__links-right
+													if (i == 0)
+														a.favorite-link.added(href="#" title="В избранное")
+													else
+														a.favorite-link(href="#" title="В избранное")
+													//- if (i == 0)
+													//- 	a.compare-link.added(href="#" title="Добавить к сравнению")
+													//- else
+													//- 	a.compare-link(href="#" title="Добавить к сравнению")
+											.cat-item__desc
+												.cat-item__title
+													a(href="#")=item.title
+												.cat-item__price
+													.cat-price=item.price+" руб"
+											.cat-item__btns
+												.cat-item__btns-primary
+													a.default-btn(href="#") В корзину
+												.cat-item__btns-second
+													a.second-btn.fancybox(href="#") Заказать в один клик
+					.main-banners__cont
+						.main-title Рекомендации
+						.main-banners
+							.main-banners__top
+								.main-banners__top-item.main-banners__top-item--vertical
+									a.small-banner(href="#")
+										figure.small-banner__img
+											img(src="img/photos/bot-banner-0.jpg", alt="")
+										.small-banner__desc
+											.small-banner__title Товары для <br /> путешественников
+											.small-banner__btn
+												.more-btn
+													span.more-btn__circle
+								.main-banners__top-item.main-banners__top-item--vertical
+									a.small-banner(href="#")
+										figure.small-banner__img
+											img(src="img/photos/bot-banner-1.jpg", alt="")
+										.small-banner__desc
+											.small-banner__title Товары для <br /> детей
+											.small-banner__btn
+												.more-btn
+													span.more-btn__circle
+								.main-banners__top-item.main-banners__top-item--hor
+									a.small-banner(href="#")
+										figure.small-banner__img
+											img(src="img/photos/bot-banner-2.jpg", alt="")
+										.small-banner__desc
+											.small-banner__title Товары при<br /> боли в суставах
+											.small-banner__btn
+												.more-btn
+													span.more-btn__circle
+								.main-banners__top-item.main-banners__top-item--hor
+									a.small-banner(href="#")
+										figure.small-banner__img
+											img(src="img/photos/bot-banner-3.jpg", alt="")
+										.small-banner__desc
+											.small-banner__title Товары для беременных
+											.small-banner__btn
+												.more-btn
+													span.more-btn__circle
+							.main-banners__mid
+								.mid-banners
+									- for (let i = 4; i <= 6; i++)
+										.mid-banners__item
+											a.mid-banner(href="#")
+												figure.mid-banner__img
+													img(src="img/photos/bot-banner-"+i+".jpg")
+					.bot-banner
+						a.bot-banner__img(href="#")
+							picture
+								source(data-main="" media="screen and (min-width: 660px)" srcset="img/photos/bot-banner-7.jpg")
+								source(media="screen and (max-width: 660px)" srcset="img/photos/bot-banner-7-mobile.jpg")
+								img
+							.bot-banner__img-text
+								.bot-banner__title Центр лечения сколиоза
+								.bot-banner__btn
+									.more-btn
+										span.more-btn__circle
+					.main-advantages__cont
+						.main-advantages
+							each adv,i in [{title: "Бесплатная доставка", subtitle: "Удобная и быстрая доставка"}, {title: "Оплата", subtitle: "Вы можете выбрать один из трёх вариантов оплаты"}, {title: "8 (351) 211-16-97", subtitle: "Горячая линия работает 7 дней в неделю с 10:00 до 19:00"}, ]
+								.main-advantages__item
+									.m-advantage
+										figure.m-advantage__img
+											img(src="img/advantage-"+i+".svg")
+										.m-advantage__text
+											.m-advantage__title=adv.title
+											.m-advantage__subtitle=adv.subtitle
+		include inc/footer.pug
+		include inc/scripts.pug

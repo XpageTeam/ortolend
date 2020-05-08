@@ -1,0 +1,35 @@
+header.head
+	.head__top
+		.wrapper
+			.head__wrap
+				.head__logo
+					a.logo(href="#")
+						img(src="img/logo.png")
+				nav.head__nav
+					ul.menu
+						each menuItem, i in ["Каталог товаров", "Адреса салонов", "Прием врача", "Акции и скидки", "Центр лечения сколиоза", ]
+							li.menu__item
+								if (i == 0)
+									a.menu__link.active(href="#")=menuItem
+								else
+									a.menu__link(href="#")=menuItem
+				.head__phone
+					address.head-phone
+						span Единая справочная служба
+						a(href="tel:88003014375") 8 800 301 43 75
+				.head__search
+					button.search-btn(href="#")
+				.head__cart
+					a.cart-link(data-count="1" href="#")
+				.head__lc
+					a.lc-link(href="#")
+				.head__burger
+					.burger
+						span
+	.head__bot
+		.wrapper
+			nav.head-bot-nav
+				ul.bot-menu
+					each title in ["Обувь", "Компрессионный трикотаж", "Стельки", "Бандажи", "Корсеты", "Для суставов", "Комфортный сон", "Массажеры и тренажеры", "Средства реабилитации", "Красота", "Школьникам", "Игрушки", "Для здоровья", ]
+						li.bot-menu__item
+							a.bot-menu__link(href="#")=title

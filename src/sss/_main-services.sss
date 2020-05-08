@@ -1,0 +1,51 @@
+.main-services
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -30px -30px
+
+	&__item
+		width: calc((100% - 30px * 4) / 4)
+		margin: 0 0 30px 30px
+		display: flex
+		flex-direction: column
+
+	&__cont
+		margin: rem(57) 0 rem(60)
+
+.service
+	background: var(--secondColor)
+	padding: 2rem
+	flex: 1 1 auto
+
+	&__img
+		margin-bottom: rem(19)
+		height: 63px
+		display: flex
+		// justify-content: center
+		align-items: center
+
+		img
+			display: block
+
+	&__bot
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		&-text
+			max-width: 115px
+
+			&:hover, &:focus
+				text-decoration: underline
+
+		&-btn
+			flex: none
+
+			&:not(:last-child)
+				margin-left: rem(26)
+
+			.more-btn
+
+				&__circle
+					background-color: var(--mainColor)
+					border: none

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Бренды
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			.inner-content
+				.title-block__cont
+					.wrapper
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Бренды
+							.title-block__title
+								h1 Бренды
+						.search
+							form
+								input.search__input(type="search" placeholder="Введите название бренда")
+								input.search__submit(type="submit")
+				.inner-content__content
+					.brands__cont
+						.wrapper
+							.brands
+								.brands__sort
+									.sort
+										.sort__select-cont
+											.sort__select-label Показать:
+											select.sort__select
+												option(value="1") Все бренды
+												option(value="2") Все бренды
+												option(value="3") Все бренды
+								.brands__list
+									each brand in [["Bauerfeind"], ["Dandino"], ["Ergoforma"], ["Grubin"], ["Kapika"], ["Medi", "Medisana"], ["Orten Berg", "Orlett", "Otto Bock", "Orto", "Ofa Barmberg", "Orthopedic", ], ["Pasther", "Podo Well"], ["Renoteks"], ["Saicara", "School", "Sursil Ortho", "Sigvaris", ], ["Trelax", "Tapiboo", "Togu", "Totto", ], ["Urtuzz"], ]
+										.brands__item(data-letter=brand[0][0])
+											ul.brand
+												each link in brand
+													li.brand__item
+														a.brand__link(href="#")=link
+								.brands__list
+									each brand in [["Дельтатерия"], ["Ортосипа"], ["Парижская Коммуна"], ["Тривес"], ]
+										.brands__item(data-letter=brand[0][0])
+											ul.brand
+												each link in brand
+													li.brand__item
+														a.brand__link(href="#")=link
+		include inc/footer.pug
+		include inc/scripts.pug

@@ -1,0 +1,165 @@
+.cart
+
+	&__table
+		width: 100%
+
+		th
+			text-align: left
+			padding: 21px 48px
+			font-size: rem(14)
+			background: var(--secondColor)
+
+			&:nth-child(2)
+				text-align: center
+
+		td
+			vertical-align: middle
+			padding-top: 27px
+			padding-bottom: 31px
+
+			&:first-child
+				width: 60%
+
+		tr
+
+			&:not(:first-child)
+
+				td
+					border-top: 1px solid var(--borderColor)
+
+.cart-tovar
+	display: flex
+	align-items: center
+
+	&__img
+		flex: none
+		margin-right: rem(20)
+		max-width: 150px
+
+		img
+			display: block
+
+	&__title
+		font-weight: 400
+		margin-bottom: 5px
+
+		a
+			color: inherit
+			font: inherit
+
+	&__text
+		color: #a6a8b3
+		font-size: rem(12)
+
+		b
+			color: #000
+
+	&__prices
+		display: flex
+		align-items: center
+		margin: rem(25) 0 0
+		white-space: nowrap
+
+	&__count
+		text-align: center
+
+div.cart-tovar__price
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+.cart-price
+	font-weight: bold
+	font-size: rem(20)
+
+	&:not(:last-child)
+		margin-right: 13px
+
+	&--last
+		font-size: rem(13)
+		line-height: lh(15, 13)
+		color: #a6a8b3
+		font-weight: 400
+		position: relative
+
+		&:after
+			content: ""
+			position: absolute
+			size: 105% 1px
+			background: currentColor
+			top: calc(50% - 1px)
+			left: 0
+			transform: rotate(-6deg)
+
+.tovar-count
+	display: flex
+
+	&__plus, &__minus
+		flex: none
+		width: 18px
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute calc(50% - 1px) * * calc(50% - 6px
+				)
+			size: 11px 1px
+			background: #cacaca
+
+	&__plus
+
+		&:after
+			content: ""
+			position: absolute calc(50% - 6px) * * calc(50% - 1px)
+			size: 1px 11px
+			background: #cacaca
+
+	&__input
+		border: none 
+		text-align: center
+		padding: 0 3px
+		font-size: 20px !important
+		margin: 0 5px
+		width: 33px
+
+.cart-footer
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+
+	&__promo
+		margin-bottom: 24px
+
+	&__itog
+		margin-bottom: 48px
+
+	&__btns
+
+		a
+			border-radius: 6px
+
+			&:not(:last-child)
+				margin-right: rem(36)
+
+.cart-itog
+	color: #fff
+	background: var(--mainColor)
+	font-weight: bold
+	font-size: rem(20)
+	padding: rem(30) rem(52)
+
+.promo
+	font-size: rem(14)
+
+	form
+		display: flex
+		flex-direction: row-reverse
+		align-items: center
+
+	&__label
+		margin-right: 2rem
+
+	&__input
+		border: 1px solid var(--borderColor)
+		size: 156px 45px
+		padding: 3px 10px

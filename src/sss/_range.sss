@@ -1,0 +1,24 @@
+.range
+	display: block
+
+	.ui-slider
+
+		&-handle
+			top: -6px !important
+			margin-left: -7px !important
+			size: 15px !important
+			border: 1px solid var(--borderColor)
+			border-radius: 50%
+			background: #fff
+			cursor: pointer !important
+
+			&:after
+				content: ""
+				position: absolute calc(50% - 4px) * * calc(50% - 3px)
+				border-radius: inherit
+				background: var(--mainColor)
+				size: 7px
+
+		&-range
+			height: 3px !important
+			background: var(--mainColor)
